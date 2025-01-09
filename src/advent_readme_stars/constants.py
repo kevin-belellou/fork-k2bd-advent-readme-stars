@@ -31,3 +31,7 @@ ADVENT_URL = os.environ.get("ADVENT_URL", "https://adventofcode.com")
 
 #: Stars info endpoint
 STARS_ENDPOINT = f"{ADVENT_URL}/{YEAR}/leaderboard/private/view/{LEADERBOARD_ID}.json"
+
+SHOW_MISSING_DAYS = os.environ.get("INPUT_SHOWMISSINGDAYS", "false") != "false"
+
+SHOW_ALL_MISSING_DAYS = os.environ.get("INPUT_SHOWALLMISSINGDAYS", "false") != "false"
