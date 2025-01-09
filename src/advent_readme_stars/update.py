@@ -9,9 +9,7 @@ from advent_readme_stars.constants import (
     SHOW_MISSING_DAYS,
     SHOW_ALL_MISSING_DAYS
 )
-from advent_readme_stars.progress import get_progress
-
-from src.advent_readme_stars.progress import DayProgress
+from advent_readme_stars.progress import get_progress, DayProgress
 
 
 def remove_existing_table(lines: List[str]) -> List[str]:
