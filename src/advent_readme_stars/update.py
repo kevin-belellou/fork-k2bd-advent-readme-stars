@@ -9,8 +9,10 @@ from advent_readme_stars.constants import (
     STAR_SYMBOL,
     TABLE_MARKER,
     YEAR,
+    SHOW_MISSING_DAYS,
+    SHOW_ALL_MISSING_DAYS
 )
-from advent_readme_stars.progress import get_progress
+from advent_readme_stars.progress import get_progress, DayProgress
 
 
 def remove_existing_table(lines: List[str]) -> List[str]:
@@ -86,6 +88,29 @@ def insert_solutions_table(lines: List[str]) -> List[str]:
         "| :---: | :---: | :---: | :---: |",
     ]
     stars_info = sorted(list(get_progress()), key=lambda p: p.day)
+    print(stars_info)
+
+    if SHOW_MISSING_DAYS or SHOW_ALL_MISSING_DAYS :
+        first_day = 1 if SHOW_ALL_MISSING_DAYS or not stars_info else stars_info[0].day
+        current_day = first_day
+
+        for day in stars_info.copy():
+            index = stars_info.index(day)
+            if day.day != current_day:
+                while current_day < day.day:
+                    stars_info.insert(index, DayProgress(current_day, False, False))
+                    current_day += 1
+                    index += 1
+
+            current_day += 1
+
+        print(stars_info)
+
+        if SHOW_ALL_MISSING_DAYS and (not stars_info or stars_info[-1].day != 25):
+            for i in range(stars_info[-1].day if stars_info else 1, 26):
+                stars_info.append(DayProgress(i, False, False))
+
+    print(stars_info)
 
     for star_info in stars_info:
         day_url = f"{ADVENT_URL}/{YEAR}/day/{star_info.day}"
