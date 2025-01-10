@@ -82,7 +82,7 @@ def insert_solutions_table(lines: List[str]) -> List[str]:
         TABLE_MARKER,
         f"{HEADER_PREFIX} {YEAR} Results",
         "",
-        "| Day | Part 1 | Part 2 | Solution |",
+        "| Day | Solution | Part 1 | Part 2 |",
         "| :---: | :---: | :---: | :---: |",
     ]
     stars_info = sorted(list(get_progress()), key=lambda p: p.day)
@@ -93,7 +93,7 @@ def insert_solutions_table(lines: List[str]) -> List[str]:
         part_1_text = STAR_SYMBOL if star_info.part_1 else " "
         part_2_text = STAR_SYMBOL if star_info.part_2 else " "
         solution = get_solution(YEAR, star_info.day)
-        to_insert.append(f"| {day_text} | {part_1_text} | {part_2_text} | {solution} |")
+        to_insert.append(f"| {day_text} | {solution} | {part_1_text} | {part_2_text} |")
 
     return lines[:table_location] + to_insert + lines[table_location:]
 
