@@ -8,4 +8,4 @@ This fork contains two additional features compared to the original repository:
 
 [original-repo]: https://github.com/k2bd/advent-readme-stars
 [solution-column-PR]: https://github.com/k2bd/advent-readme-stars/pull/15
-[missing-days-commit]: https://github.com/kevin-belellou/fork-dorny-test-reporter/commit/3f2c76c05b49c54c060337ee7afd5230516831d2
+[missing-days-commit]: https://github.com/kevin-belellou/fork-k2bd-advent-readme-stars/commit/3f2c76c05b49c54c060337ee7afd5230516831d2
