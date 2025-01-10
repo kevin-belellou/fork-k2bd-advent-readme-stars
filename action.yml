@@ -52,6 +52,18 @@ inputs:
     description: Location of your solution for each day
     required: false
     default: ""
+  showMissingDays:
+    description: >
+      Show days that have 0 stars, 
+      between the first day with at least one star and up until the last day with at least one star.
+      This option is ignored if 'showAllMissingDays' is active.
+    required: false
+    default: "false"
+  showAllMissingDays:
+    description: >
+      Show all the days that have 0 stars, from day 1 and up to day 25.
+    required: false
+    default: "false"
 branding:
   icon: "star"
   color: "purple"
