@@ -72,7 +72,7 @@ def insert_table(lines: List[str]) -> List[str]:
         print(stars_info)
 
         if SHOW_ALL_MISSING_DAYS and (not stars_info or stars_info[-1].day != 25):
-            for i in range(stars_info[-1].day, 25):
+            for i in range(stars_info[-1].day if stars_info else 1, 25):
                 stars_info.append(DayProgress(i, False, False))
 
     print(stars_info)
