@@ -56,7 +56,7 @@ def insert_table(lines: List[str]) -> List[str]:
     print(stars_info)
 
     if SHOW_MISSING_DAYS or SHOW_ALL_MISSING_DAYS :
-        first_day = 1 if SHOW_ALL_MISSING_DAYS else stars_info[0].day
+        first_day = 1 if SHOW_ALL_MISSING_DAYS or not stars_info else stars_info[0].day
         current_day = first_day
 
         for day in stars_info.copy():
@@ -71,7 +71,7 @@ def insert_table(lines: List[str]) -> List[str]:
 
         print(stars_info)
 
-        if SHOW_ALL_MISSING_DAYS and stars_info[-1].day != 25:
+        if SHOW_ALL_MISSING_DAYS and stars_info and stars_info[-1].day != 25:
             for i in range(stars_info[-1].day, 25):
                 stars_info.append(DayProgress(i, False, False))
 
